@@ -31,10 +31,8 @@ directory.
 
   Example registration and configuration::
 
-    // add SilexExtension library to the autoloader 
-    $app['autoloader']->registerNamespace('SilexExtension', __DIR__ . '/path/to/silex-extensions');
-    $app->register(new SilexExtension\EmbedlyExtension(), array(
-        'embedly.class_path' => __DIR__ . '/vendor/embedly-php/src',
+    // add SilexEmbedly library to the autoloader 
+    $app->register(new SilexEmbedly\EmbedlyExtension(), array(
         'embedly.cache_dir'  => sys_get_temp_dir() . '/embedly',
         'embedly.cache_ttl'  => 240, // 240 seconds
         'embedly.options' => array(

@@ -1,12 +1,12 @@
 <?php
 
-namespace SilexExtension\Tests\Extension;
+namespace SilexEmbedly\Tests\Extension;
 
 use Silex\Application;
 
 use Symfony\Component\HttpFoundation\Request;
 
-use SilexExtension\EmbedlyExtension;
+use SilexEmbedly\EmbedlyExtension;
 
 use Embedly\Embedly;
 
@@ -48,6 +48,8 @@ class EmbedlyExtensionTest extends \PHPUnit_Framework_TestCase
         $request = Request::create('/');
         $app->handle($request);
         
-        $this->assertNotEmpty($app['embedly']->oembed('http://www.youtube.com/watch?v=c9BA5e2Of_U'));
+        $data = $app['embedly']->oembed('http://www.youtube.com/watch?v=c9BA5e2Of_U');
+        $this->assertNotEmpty($data);
+        $this->assertEquals($data->title, "Rick Astley - Never Gonna Give You Up (Live 2005)");
     }
 }

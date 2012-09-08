@@ -10,8 +10,8 @@ $app->register(new Silex\Extension\TwigExtension(), array(
     'twig.path'       => __DIR__ . '/twig'
 ));
         
-$app['autoloader']->registerNamespace('SilexExtension', __DIR__ . '/../src');
-$app->register(new SilexExtension\EmbedlyExtension(), array(
+$app['autoloader']->registerNamespace('SilexEmbedly', __DIR__ . '/../src');
+$app->register(new SilexEmbedly\EmbedlyExtension(), array(
     'embedly.class_path' => __DIR__ . '/../vendor/embedly-php/src',
     'embedly.cache_dir'  => sys_get_temp_dir() . '/gravatar',
     'embedly.cache_ttl'  => 500,

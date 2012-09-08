@@ -1,6 +1,6 @@
 <?php
 
-namespace SilexExtension;
+namespace SilexEmbedly;
 
 use Silex\Application;
 use Silex\ServiceProviderInterface;
